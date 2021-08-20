@@ -1,0 +1,155 @@
+
+/* Variables CSS (custom properties)*/
+/* mediante do spuntos : y root declaramos una variable
+y con guion guion "--" indicamos que va hacer mi variable
+*/
+:root{
+    --color: rgb(0, 0, 173);
+    --font-family: Arial;
+}
+
+h1{
+    
+    background: white;
+    width: 100px;
+    margin: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+p{
+    /* De esta manera mandamos a llamar nuestra variable de color*/
+    color: var(--color);
+    font-family: var(--font-family);
+}
+/* SELECTORES
+Nos permite indicar a que parte de HTML le vamos aplicar estilos de CSS
+selector{
+}
+1.Selectores simples
+   Son de solo una palabra (h1 { })
+2.Selectores compuestos
+   Son de mas de dos palabras (h1 span { })
+3.Selectores con operadores
+   Aquellos que tiene operadores (h1 + span { })
+4.Pseudoclases
+  Proxima clase
+*/
+/* No es lo mejor usar id en scc*/
+#Parrafo{
+    color: tomato;
+}
+/* SELECTORES simples: etiquetas */
+/* son etiquetas html
+h1{
+    color: aquamarine;
+}
+*/
+/*SELECTORES DE CLASES
+--NoPueden iniciar con números
+Podemos definir a quienes les otorgamos ciertas etiquetas
+esto lo hacemos con el atributo class en HTML, de esta forma todos 
+los que esten en esta clase los personalizamos de forma diferenre al resto
+*/
+.title{
+    color: yellowgreen;
+}
+/* SELECTORES AGRUPADOS 
+nos permite dar instrucciones a varios elementos
+*/
+h3,h4{
+    color: violet;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*SELECTORES COMPUESTOS: CONVINADOS*/
+/* Creas un solo selector juntando varios
+En este ejemplo lo que hace es buscar los h5 pero que
+tambien tenga la clase (clase2) y solamente a los que cumplan
+estas dos condiciones les aplica los requisitos dentro de ella
+h5.clase2{
+    color: steelblue;
+}
+podemos incluos como condicion varias clases 
+o incluos convinar con id
+*/
+
+h5.clase2{
+    color: steelblue;
+}
+/*Seleccion compuesta: descendientes*/
+/* se separan con espacios
+este funciona como padre e hijo, body es padre de h5 y de span
+es decir en cadena, es primero bodu o la etiqueta que se ponga primero
+y puede ir como padre, hijo, niero, bisnieto osea etiqueta de l
+a etiqueta de la etiqueta*/
+body span{
+    color: teal;
+}
+/*Operadores * + >  ~ */
+*{
+    /*Este selcciona ABSOLUTAMENTE todo el codigo y hace lo que indiques*/
+}
+/* con el mayor que (>) indicamos que si la etiqueta de la izquierda es 
+padre de la izquierada se ejecute*/
+body > span{
+    color: teal;
+}
+/*Con el signo de mas indicamos que solamente el siguiente div se le 
+aplique esta condición, el siguiente div despues del h6, si hay oreo 
+div depues no aplicara solo al primero. se puede aplicar en con cualquier tipo de etiqueta*/
+h6 + div{
+    border: 3px solid;
+}
+/*Con este indicamos que todos los hermanos del padre se les 
+cumpla esta condicion, un ejemplo es div, todos los div siguientes de padre se les ejecutara 
+estas condiciones*/
+h6 ~ div{
+    background: teal;
+}
+/* Selectores de atributo 
+usan corchetes []
+*/
+
+[type="text"]{
+    border: 1px solid springgreen;
+
+}
+[type="tel"]{
+    border: 1px solid springgreen;
+}
+    /*Mediante los corchetes mandamos a llamar funciones de HTML y 
+    las usamos en css para perzonalizarlas
+    [requires]{
+        border: 1px solid springgreen;
+    }
+    */
+[type="submit"]{
+    color: white;
+    border: none;
+    background: skyblue;
+
+    /* Comienza con [attr^="value"] 
+    Selector de atributos con comodines
+    sirve como comodin para poder simplificador
+
+    https://ed.team
+
+    Termina con [attr$="value"]
+    con que contenga la terminacion del final lo detecta sin 
+    necesidad de escribir todo, lo detecta
+
+    https://ed.team.mp4
+
+    a[href$=".mp4"] {
+  background: red;
+  } 
+    Contiene [attr*="value"]
+    con que contenga algo que el enlace de abajo tenga, lo detecta
+
+    https://ed.team
+
+    a[href*="team"]{
+    color: white;
+    background: blue;
+}
+    */
+    
+}

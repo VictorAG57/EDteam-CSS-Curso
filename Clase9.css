@@ -1,0 +1,88 @@
+/*- Tipografía, fuente, familia tipográfica
+    - Tipografía
+    - Fuente
+    - Estilos
+    - Familia tipográfica
+- Tipos de fuentes
+    - Serif
+    - Sans serif
+- Glifos*/
+
+/*Unidades de medidad: em y rem
+
+*REM es bueno para normalizar en todo el texto el tamaño de fuente*
+
+un rem (1rem) es equivalente al tamaño predeterminado en root:,
+en este caso 1rem = 16px.
+en el navegador siempre viene predeterminado el tamaño de letra
+font-size: 16px;
+y en "rem" al aplicar un porsentaje, por ejemplo 300%, 
+la fuente sera el 300% de 16px.
+
+font-size: tamaño de fuente;
+
+rem: tamaño relativo a la raiz
+
+*EM son buenos usarlos en padding, border, border-radius,etc *
+* puesto que em actua de manera proporcional y se ve MUCHO MEJOR *
+
+em = 100% del tamaño de fuente del contexto
+es decir, según el tamaño de fuente del contexto
+es el tamaño que dara, es decir si pones 1.5 em
+es el 150% del tamaño de fuente del contexto.
+
+*/
+/*
+- font-weight: bold; = Nos permite definir el grosor
+es recomendable en vez de usar bold, usar personatjes 200%-800%
+- text-align=(center, right, justify y left) = orientación del tamaño
+- font-style: italic;Permite que la funte sea normal o italic
+- line-height: 120% 0 (1.2); porcentaje es equivalente al contexto como con em
+
+* Para textos largos es recomendable 1.5 a 1.8 que ya es mucho *
+* Para titulos largos de dos lineas recomendable 1.2-1.3 (mas chicos)*
+
+- text-decoration: line-through; = decoras el estilo con tachado (line-through) 
+ y linea abajo (under-line) 
+-text-transform: lowercase; = convierte a mayuscula (uppercase) o minuscula (lowercase)
+o capitalize que cada letra inicie con mayuscula
+-letter-spacing: .1em; = separación entre letras, para diseños mas especiales
+ word-spacing: 1em; = Separación entre palabras
+*/
+
+.prueba1{
+    font-size: 16px;
+    font-style: italic;/*Permite que la funte sea normal o italic*/
+    font-weight: bold;/*Nos permite definir el grosor*/
+    text-align: justify;/*No usar justify no es recomendable*/
+    line-height: 120%; /*Separción entre lineas*/
+    text-decoration: line-through;/*decoras el estilo con tacahdo y linea abajo*/
+    text-transform: lowercase;/*convierte a mayuscula (uppercase) o minuscula (lowercase)*/
+    letter-spacing: .02em;/*separación entre letras*/
+    word-spacing: 1em;/*Separación entre palabras*/
+    font-family: 'Comfortaa', cursive;/*Importe fuente de GOOGLE FONTS */
+    /* lLa segunda fiente llamda "cursive", es una fuente de respaldo por 
+    si no funciona la primera, para que sea posible DEBE ESTAR EN HTML antes de 
+    llamar a css*/
+    /*Aunque importes la fuente puedes modificarle el grosor (font-weight)-recomendable*/
+}
+
+/* Font-family
+
+Para usar fuentes necesitas instalarlas en tu sistema operativo.
+Podemos resolverlo con servicios de internet como GOOGLE FONTS
+Elegi la opción de cuadros y elegi embed y copia el código
+*/
+
+/*text-shadow = text-shadow: x y blur color;
+permite dar sombras a los textos
+
+Estas solo se usan cuando se quiere resaltar el texto o dar contraste,
+no usar por usar. Usar sutilmente.
+*/
+.prueba2{
+    font-size: 24px;
+    color: hsl(200, 30%, 50%);
+    background: hsl(200, 20%, 20%);
+    text-shadow: 1px 1px 2px #fff ;
+}

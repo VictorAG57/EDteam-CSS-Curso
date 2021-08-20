@@ -1,0 +1,186 @@
+/*PSEUDOCLASES*/
+/*
+Permiten seleccionar elementos según su estado o alguna condición.
+Se indca con dos puntos :
+* ESTOS DOS EJEMPLOS NO SON LO MISMO*
+
+HOVER: Es cuando pones el mas sobre esa etiqueta
+
+con espacio entre etiqueta y atributo indicamos que el hijo o cualquier desiendiente 
+que este en estado hover se aplique esto
+h1 :hover {
+
+    sin espacio indicamos que cuando pongas el raton sobre h1 se
+    aplique lo que indiques
+}
+h1:hover{
+
+}
+*/
+/*Elemento HTML, es el padre e todo CSS <html> = :root
+:root{
+
+}
+
+*/
+.box1{
+    background: teal;
+    width: 200px;
+    height: 300px;
+}
+.box1:hover{
+    background: turquoise;
+    width: 300px;
+    height: 500px;
+    /*transition es una transicion ouesto que cambiara 
+    de componentes y asi no cambiara de golpe, all es cualquier propiedad
+    y .3s el tiempo que demorara*/
+    transition: all .3s;
+}
+.box2 {
+    background: tomato;
+    width: 200px;
+    height: 300px; 
+}
+/*Aqui indicamos que el h1 de box dos desaparesca mediante display
+y con (.box2:hover h1) indicamos que cuando pongas el mause sobre box 2,
+su desendiente se aparesca desactivando el display none con dispaly block*/
+
+.box2 h1{
+    display: none;
+}
+.box2:hover h1{
+    display: block;
+}
+
+/*:active
+esto significa que cuando de click pase algo por ejemplo
+*/
+
+a:active{
+    color: teal;
+}
+
+/*:visited
+significa que ya visitaste un sitio y tu apartir de CSS
+le das a enter al usuario eso, que ya visito ese sitio despues de dar click*/
+
+a:visited{
+    color: violet;
+}
+/*PARA QUE FUNCIONE dedes poner estas tres propiedades en orden
+
+Primero visited, luego hover y por ultimo active*/
+
+
+/*:target :not :empaty
+
+mediante targer, es el destino de un enlace, puedo personalizarlo,
+ por ejemplo con un indice y al dar click sobre uno me lleva a donde
+  tiene como destino el indice y ahi entra en función target, que 
+  dara un colo o perzonalización a llvarte ahi mediante id.
+
+:not
+cuando queremos negar un selector la usamos
+
+psudoclase (:last-childe) es el ultimo hijo
+
+:empaty selecciona o es para los que etan vacios, cmo un div basio
+*/
+div{
+    background: cornsilk;
+}
+p:not(.tres){
+    color: brown;
+}
+p:target{
+    color: aquamarine;
+}
+/*Aqui lo que hago es corregir el margen para que no este desfasado
+siempre es recomendable usarl el margin-buttom oara dar margen vertcalmente*/
+p{
+    margin: 0;
+}
+p:not(:last-child){
+    margin-bottom: 1em;
+}
+
+/* :first-child :last-child :first-of-type :last-of-type
+
+* :first-child es el primer hijo
+
+*:last-child es el ultimo hijo
+
+*:first-of-type = estos sonmas especificos puesto que indica el primero
+pero del tipo " ", es decir es el primero de un tipo no de todos, tu seleccionas 
+el tipo y de igual manera con :last-of-type
+SOLO FUNCIONAN CON ELEMENTOS Y NO CLASES
+
+ *//*
+ul :first-child{
+    background: crimson;
+}
+
+ul :last-child{
+    background: darkblue;
+
+ }
+ */
+
+/*
+esta es otra manera que hace lo mismo pero sin 
+espacio entre ul y last childe puestoq que no es desendiente
+li:first-child{
+--------------Descomentar para ver como funciona, pero comenta el de abajo---------------------
+    background: crimson;
+ }
+
+ li:last-child{
+    background: darkblue;
+ }
+*/
+.uno:first-of-type{
+    background: darkcyan;
+
+}
+.uno:last-of-type{
+    background: darkorchid;
+
+}
+/* :nth-child y :nth-of-type
+estas son psdoclases que buscan atarvez de número, con :nth-child
+biscas el número con el cual quieres interactuar  del primero al ultimo y 
+con :nth-of-type buscas del ultimo al primero con el que quieres interactuar
+
+busca pares e impares
+:nth-child(even) y :nth-of-type(odd)
+
+busca el número que le indiques
+:nth-child(numero) y :nth-of-type(numero )
+
+con la n inidca que va por multiplos, por ejemplo de 3 en 3 (3n) o (3n+6)
+:nth-child(numero) y :nth-of-type(numero n )
+
+encontrar los primers x elelemntos
+con (-n  + un numero) solo selecciona los primeros que le indiques (número)
+
+(n+5) oculta los primero 5
+(n-5) oculta los ultimos 5
+
+se pueden convinar dos o mas
+
+o TAMBIÉN
+(
+- Seleccionar los primeros X elementos `:nth-child(-n+x)`
+- Seleccionar los elementos a partir de X `:nth-child(n+X+1)`
+- Seleccionar los X últimos `:nth-last-child(-n+x)`
+- Seleccionar todos los elementos menos los X últimos `:nth-last-child(n+x+1)`)
+
+:nth-of-type y :nth-last-of-type
+
+funciona igual pero mas especifico, por ejemplo con
+una clase al principio (.clase1), donde solo quieres
+que aplique a una clase
+*/    
+
+

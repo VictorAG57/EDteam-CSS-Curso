@@ -1,0 +1,138 @@
+:root{
+   --bg: green;
+   --width: 400pz;
+   --height:200px;
+}
+
+.box-1{
+    width: 400px;
+    height: 250px;
+    background: cadetblue;
+    border: 1px solid navy;
+}
+/*shorthand = esto es una propiedad 
+que agrupa varias mas, por ejempo en este 
+caso border agrupa 3 diferentes en una sola linea, 
+indivudualmente serian las siguientes:
+
+border: 1px solid navy;
+
+border-width; = grosor o tamaño
+border-style; = estilo del borde
+border-color; = color
+
+si las usamos individualmete, podemos 
+ser más especificos en unos casos, por ejemplo:
+
+border-width: 4px 8px 12px 9px; = indicamos el borde de cada uno
+border-style: solid dashed dotted double; = indicamos que estilo de borde queremos en cada lado
+(solid=solido, dashed=en lineas chicas, dotted=en puntos y double=dos lineas)
+border-color: blue red black green; (el color de cada lado)
+
+*,*:before, *after{
+    box-sizing: border-box;
+}
+Mediante este manera hacemos que todo el codigo 
+respete siempre su tamaño de caja incluyedo padding y border
+
+*/
+
+/*border-radius
+
+permite redondar esquinas
+si usamos porcentaje en vez de px, las esquinas se hacen 
+mas en estilo de obalado, el 50% es el maximo.
+De la misma manera que con border, podemos definir que 
+tan redonda queremos cada esquina. 
+(border-top-left-radius:)
+(border-top-right-radius:)
+(border-botom-left-radius:)
+(border-botom-right-radios:)
+* o todo en una linea *
+border-radius: x x x x / y y y y;
+border-radius: 100px 200px 10px 40px / 70px 60px 70px 12px;
+
+* O si quieres bordes igaules en los cuatro lados 
+podemos simplificarlo asi*
+border-radius: 100px / 100px;
+
+border-radius: x y
+si ponemos dos valores en una esquina con border-radius
+la primera cantidad funciona como x y la segunda como y,
+como un plano cartesiano.
+
+*/
+
+.box-2{
+
+    border-radius: 10px;
+    width: var(--width);
+    height: var(--height);
+    background: var(--bg);
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid;
+}
+.box-3{
+
+    border-radius: 50%;
+    width: var(--width);
+    height: var(--height);
+    background: var(--bg);
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid;
+}
+.box-4{
+    border-top-left-radius: 100px 200px;
+    border-top-right-radius: 250px 300px;
+    border-bottom-left-radius: 100px 250px;
+    border-bottom-right-radius: 100px 200px;
+    
+    width: var(--width);
+    height: var(--height);
+    background: var(--bg);
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid;
+}
+.box-5{
+    border-radius: 100px / 100px;
+    width: var(--width);
+    height: var(--height);
+    background: var(--bg);
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid;
+}
+/*Propiedad outline
+funciona como un borde pero por fuera de la caja
+*/
+
+.box-6{
+    outline: 10px solid;
+    border: 10px solid springgreen;
+}
+
+/*Propiedad box-shadow 
+significa sombras
+box-shadow: h-offst v-offset blur spreadd color | inset;
+
+h-offst= la sepación, que tanto se va a mover en horizontal.
+v-offset= la sepación, que tanto se va a mover en vertical.
+blur= el difuminado
+spreadd= que tanto va a crecer
+color= el color
+inset= hace que sea por dentro de la figura el difuminado.
+*/
+
+.box-7{
+    margin: 40px;
+    padding: 20px;
+    border: 5px black solid;
+    height: 200px;
+    width: 200px;
+    background: teal;
+    /* rgba () es una paleta de colores pero el ultimo camppo es transparencia*/
+    box-shadow: -5px -5px 4px 2px rgba(0, 0, 0, .2) inset, 5px 5px 4px 2px white inset;
+}

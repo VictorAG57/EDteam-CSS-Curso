@@ -1,0 +1,73 @@
+/*BACKGRANUD (fondos) son shorthand
+
+background-image: url(); = pegasmos una imagen de fondo 
+puedes agragar varias imagenes con varios url, de igual manera para 
+cada imagen ay un url, también ay un background-size para cada una.
+
+background-repeat: repeat; =  la iamgen que pongas se repita o no
+background-size: auto (200px 300px = ancho alto); = define el tamaño
+ejemplo:background-size: 200px 200px;
+background-size: contain | cover; = permite que el fondo lo va arrellnar del elemento
+que tu le indiques y COVER hara que abarque todo ese contenedor. 
+
+
+
+
+/*backgrand-position
+
+backgrand-position: puede también indicar de esta manera(ejemplo = right butom)
+*/
+body{
+    background-color: teal;/*este se puede ver con img transparentes*/
+    background-image: url(https://images.unsplash.com/photo-1615141506772-90b39c01a7c9?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60);
+    background-repeat:no-repeat;
+    color: white;
+    /*background-size: contain | cover;*/
+    /*Centra en automatico cuando es solo una imagen*/
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+/*
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBQ3hnJNi2529AO6essrAjNOKn2L8E1UtL5BNHuY_0rnfejyz64pZUN3vEOF2f0I2Tw3c&usqp=CAU);
+    background-position: right 20px bottom x20px;
+    para que funcione debo hacer lo siguiente:
+    html,boy{
+        height: 100%;
+    }
+    background-repeat: no-repeat;
+}
+*/
+/* background-clip y background-origin 
+
+definen en que posición abarca el fondo, o mas bien dicho donde inicia
+
+background-clip: padding-box = la imagen llegara hast el padding solamente
+background-clip: conten-box; = la imagen llegara hast el contenido solamente
+background-clip: border-box; = la imagen llegara hast el borde
+
+background-origin tiene los mismas propiedades que background-clip
+la unica diferencia es que indica donde inicia la iamgen, por ejemplo
+con conten- box hace que la imagen se vea sin recortar.
+*/
+
+/*  background-attachment
+
+Define si el fondo se quedara fijo o scrool (se mueve con la página)
+mediante background-attachment:fixed; se crea una especie de animación al 
+mover la pantalla, de igual manera la puedes dejar fija
+ */
+
+ .box{
+     width: 600px;
+     height: 400px;
+     background-image: url(https://images.unsplash.com/photo-1615201427548-58316e349d8a?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+     margin: 100px auto;
+     background-attachment: fixed;/*Tienes que mover la ventana para que se note*/
+    }
+
+    /*BACKGOUND: image position / size repeat attachment origin clip color
+    
+    este es un shorthand
+    */

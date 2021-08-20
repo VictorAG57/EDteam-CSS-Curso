@@ -1,0 +1,43 @@
+/* 3 pilares de CSS
+
+1.Especificidad
+2.Cascada
+3.Herencia
+
+*ARQUITECTURA EN CSS*
+
++SMACSS
++OOCSS
++ITCSS
+
+En css no siempre el efecto cascada predomina, 
+la espesificidad le puede ganar, siempre el elemto 
+mas mas especifico es el que realizara la acción 
+auque no se el ultimo
+
+*VALORES DE ESPECIFICIDAD*
+(El que contenga mas puntos del las etiquetas que 
+apunten a un elemento ganara)
+
+   Etiquetas y pseudoelementos:          1
+   Clases, atributos y pseudoclases:    10
+   Id:                                 100
+   Estilos en línea:                  1000
+   !important                     infinito
+   
+   Cuando colocas !important en una linea de codigo de css
+   hace referencia a que es el de mayor prioridad o especificación
+
+   *HERENCIA*
+   Permite heredar los estilos 
+
+   * inhertit = podemos decir, herada cierto estilo de mi papá
+   podemos forzar a heredad algo que no heredaba
+   * initial = Con este indicamos ya no heredes de tu valor 
+   inicial
+
+   Los enlaces no heredan predeterminadamente
+
+
+   Con estas palabras se puede sobre reescribir la herencia
+*/

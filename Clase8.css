@@ -1,0 +1,190 @@
+/* COLOR */
+/*
+Frente (color) y Fondo (background), dos conceptos fundamentales en ccs 
+o en areas visuales
+
+current-color es un atributo que funciona como estilo variable
+guarda el color usando antes y al usarlo por ejemplo con urls
+o links, ya que estos siempre traen el mismo color azul, haces
+que se adapte al demás color.
+se adapta el color a la situación
+*/
+
+/* Color kewords
+son los colores básicos como red, yellow, red, green, blue, white, etc.
+o colores extendidos mas variados pero con atajo de nombre, 
+es decir el color tiene un nombre.
+también exist el color transparente.
+*/
+
+/*Modo de color RGB
+
+Existen dos modelos de color básico
+* aditivo (la suma da blanco) -  Modo de pantallas
+   RGB (red, green, blue) - colores básicos de aditivo
+  Tenmos 8 bits de color, significa que cada canal tiene 2^8 (256) variables de color
+  0 a 255.
+  R(255)G(255)B(255) - 16.5 millones de colores.
+
+* sustractivo (la suma es negro) ESTE NO SE USA EN CSS
+   CMYK (cyan, magenta, yellow, black) - colores básicos de sustractivo.
+
+   En css para color usamos también la propiedad rgb (0-255, 0-255, 0-255)
+
+*/
+
+body{
+    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 255, 0);
+    background-color: rgb(0, 0, 255);
+    background-color: teal;
+    color: rgba(255, 0, 255, .5); 
+    /*Cuando las tres tonalidades sean el mismo número (0-255) dara
+    una tonaidad en gris*/
+}
+/* También podemos usar RGBA (Rojo, verde, azul y transparente)*/
+
+/* Notación hexadecimal
+
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+Se usa dos veces esta notación y da 256 valores(256 colores)
+
+Es otra forma de denotar el modo de color RGB
+ -- #RRGGBB --
+
+ Si los dos caracteres de un canal se repiten puede abreviarse
+ #AA00EE es lo mismo que #A0E
+ aplica igual con transparencia
+
+rgb(255, 0, 0) = #FF0000
+rgb(0, 255, 0) = #00FF00
+rgb(0, 0, 255) = #0000FF
+rgb(128, 128, 128) = #808080
+*/
+
+/* Modo HSL
+(Hue, saturation, light)
+Hue = Tono, va de 0 a 360 grados - circulo cromatico
+0 y 360 es rojo
+60 amarillo
+120 verde
+180 cyan
+240 azul
+300 magenta;
+
+Saturation = Intensidad del color, de 0 a 100%,  color puro
+Light = (luz, de 0, negro, a 100%, blanco)= color puro 50%
+
+También puede usar Alfa(transparencia)
+*/
+
+body{
+    background-color: hsl(160, 80%, 40%);
+}
+
+/*Degradados lineales
+
+background-image se hacen los colres degradados a travex de la funció linear gradient
+background-image: linear gradient (color, color);
+ejemplo: background-image: linear-gradient(cyan, blue);
+
+ejemplo:background-image: linear-gradient(cyan 30%, blue 40%);
+con los porcentajes indicas que quieres que ese porcentaje de la pantalla
+sea de ese color puro. (puede ser 5 o también pixeles)
+
+a esto le puedes agregar también el angulo antes de poner cada uno de los colores,
+esto con grados, o de una manera mas senculla (to right, to left, to buttom y to top)
+y tambien esquinas, por ejemplo (to buttom right, to buttom left, to top right, to top left)
+*/
+body,html{
+    /*para que abarque toda la pantalla*/
+    height: 100%;
+}
+/*
+body{
+    background-image: linear-gradient(cyan 50%, blue);
+    background-repeat: no-repeat;
+}
+*/
+
+/*Degradados radiales (radial-gradient)
+
+body{
+    background-image: radial-gradient(cyan, blue);
+    background-repeat: no-repeat;
+}
+body{
+    background-image: radial-gradient(cyan 50%, blue 60%);
+    background-repeat: no-repeat;
+}
+[at x, y] es el centro de este tipo de degradado circular
+y tambien pudes controlar el tamaño [size shape] tamaño y forma (circular o obalada)
+
+tambien hay atajos para size (esquina o lado mas cernano o alejado)
+- closest-side
+- farthest-side
+- closest-corner
+- farthest-corner
+
+body{
+    background-image: radial-gradient( at 0 -50% cyan 50%, blue);
+    background-image: radial-gradient(circule at 50% 50% cyan 50%, blue 50%);
+    background-image: radial-gradient(closet-corner at 50% 50% cyan 50%, blue 50%);
+    background-repeat: no-repeat;
+}
+.box1{
+    background-image: radial-gradient(closest-corner at 50% 80%, cyan 50%, blue 50%);
+    
+}
+
+.box1{
+    background-image: radial-gradient(closest-corner at 0% 0%, cyan 20%, blue);
+}
+
+con background-size lo puedes hcaer crecer
+*/
+.box1{
+    height: 700px;
+    width: 300px;
+    border: 3px black solid;
+}
+
+
+.box1{
+    background-image: radial-gradient(closest-corner at 0% 0%, cyan 20%, blue);
+}
+.box1{
+    background-image: radial-gradient(closest-corner at 50% 80%, cyan , blue );
+}
+
+/* DEGRADADOS REPETIDOS 
+
+background-image: repeating-radial-gradient(blue 10%, cyan 20%);
+background-image: repeating-radia-gradient(blue 10%, cyan 20%);
+
+*/
+
+.yingyang{
+    --size: 200px;
+    --size2: calc(var(--size)/2);
+
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin: 50px auto;
+
+    /*primero definimos con la variable size2, la mitad de lo que mide el
+     circulo, es decir definimos el tamaño de un color, posteriormente que es un
+     circulo, despues que este a la mitad del circulo (50%) pero con diferente 
+     altura según donde la querramos, despues la abaundancia del color y la transparencia
+     colocamos primero las bolas chicas para que se puedan ver */
+    background-image: radial-gradient(var(--size2) circle at 50% 25%,black 10%, transparent 10%), /* circulo negro pequeño*/
+    radial-gradient(var(--size2) circle at 50% 25%,white 50%, transparent 50%), /* circulo blanco superior*/
+    radial-gradient(var(--size2) circle at 50% 75%,white 10%, transparent 10%), /* circulo blanco pequeño*/
+    radial-gradient(var(--size2) circle at 50% 75%,black 50%, transparent 50%), /* circulo negro inferior*/
+    linear-gradient(to right, white 50%, black 50%); /* divide el circulo a la mitad en blanco y negro*/
+
+}

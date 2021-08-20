@@ -1,0 +1,161 @@
+ /*  Box model
+
+Layout model
+    Box model
+    Position
+    Flexbox
+    CSS grid
+
+Box model (modelo de caja)
+Todos los elementos HTML son rectángulos
+
+Dos tipos de cajas (o elementos)
+
+* Bloque
+    * Ocupa todo el espacio horizontal disponible
+    * Crean una línea nueva
+    * Tienen ancho (width) y alto (height)
+* Inline (en línea)
+    * Ocupan solo el espacio necesario para su contenido.
+    * No tienen dimensiones (a excepción de las imágenes)
+
+*Cada etiqueta de HTML es de bloque o de línea, las de línea 
+solamente abarcan en tu pantalla lo necesario para 
+cumplir con tarea y los de bloque, reservan todo su espacio, 
+como un bloque y hace que salten de línea lod demás elementos*
+----------------------------------------------------------
+* Unidades de longitud (medida de tamaño)
+    * Pixeles (px)
+    * em (% del tamaño de fuente o letra actual)
+    * rem (% del tamaño de fuente o letra de body)
+*/
+
+/*  Propiedad display 
+
+    * Mediante la propriedad display forzamos a un elemto 
+    a que se convierta a un elemnto de bloque, de línea o de ambas
+    span es una etiqueta de línea de html y la forzamos hacer de bloque
+    span{
+        display:block;
+        backgraund: blue;
+    }
+    - Forzamos a un elemento de bloque hacer de línea -
+    p{
+        display:inline;
+        backgraund: blue;
+    }
+    - Forzamos a un elemento sea de bloque y de línea, lo mejor de ambos,
+      Esto podria servir para poner elemos de ambos lados-
+    p{
+        display:inline-block;
+        backgraund: blue;
+    }
+    p{
+        display:none;
+        backgraund: blue;
+    }*
+
+        block = Hace que aunque no sea de bloque, 
+        se convierta en uno de bloque.
+
+        inline = Hace que se comporte como uno de línea
+
+        inline-block = Hace que se comporte de ambas manera, 
+        de bloque y de línea 
+
+        none = oculta los elemtos, se utiliza generalmente para 
+        ocultar un elemento y que al ocurrir cierta acción se desbloquie.
+        * flex 
+        * grid
+*/
+/*MARGIN
+Esta función sirve para dar margen a tu propiedad o atributo, darle un esapcio
+un margen.
+
+float = es un atributo que sirve para mandar a izquierda o dercha dos elementos
+de bloque pero ya no se usan tanto.
+
+*Esta es otra manera de dar margen pero, para cada uno de los lados no en general, 
+como lo haces con margin nomal.*
+    margin-top: 20px;    (arriba)
+    margin-right: 30px;  (derecha)
+    margin-bottom: 10px; (abajo)
+    margin-left: 50px;   (izquierda)
+
+    o tambien se puede hacer con solo margin, de esta manera
+
+margin= 20px 30px 10px 50px; (arriba, derecha, abajo y izquierda)
+
+*/
+
+p{
+    background: tomato;
+    margin-top: 20px;    
+    margin-right: 30px;  
+    margin-bottom: 10px; 
+    margin-left: 50px;   
+}
+.ppp{
+    display: inline;
+    background: teal;
+    margin: 20px 30px 10px 50px;
+}
+ /*Centrado con margin
+    margin-right: auto;
+    margin-left: auto;
+ */
+.centro{
+    display: block;
+    background: turquoise;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*Colapsado de imagenes verticales
+los margenes verticales se suelen colapsar y se unen
+*/
+/*PADDING
+Es el limite entre el limite y el contenido
+es decir como una sepación desde donde suele iniciar el texto, 
+con padding decides cuanto lo reccores, ejecuta el ejemplo
+margin es el margen por fuera y padding el margen por dentro
+-Hace que el contenido no se vea mal
+.box{
+    background: yellowgreen;
+    margin: 50px;
+    padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 60px;
+}
+o tambien
+.box{
+    background: yellowgreen;
+    margin: 50px;
+    padding: 50px 50px 30px 60px;  
+}
+*/
+
+.box{
+    display: block;
+    background: yellowgreen;
+    margin: 80px;
+    padding: 30px;
+    width: 200px;
+    height: 100px;
+    border: black;
+}
+/*BORDES (Border)
+si le agregamos "dash se vuelve punteado"
+.box{
+    border: 5px black ;
+}
+*/
+
+/*Propiedades BOX-SIZING
+Es como el navegador calcula el tamaño de la caja final
+
+Mediante esta propiedad calcula el tamaño final de tu caja, 
+puesto que aunque le des una medidad a tu caja, un ancho y un alto,
+le suma el borde y el padding, y con esta propiedad, ajusta todo
+para que quede dentro tanto el tamaño de caja como borde y padding
+*/
